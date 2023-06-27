@@ -1,10 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Login from "./pages/login";
+import Register from "./pages/register";
+
+
 function App() {
   return (
-    <div className="h-screen bg-white-200 flex justify-center items-center">
-      <h1
-      className = "text-3xl font-bold"
-      >SmolType</h1>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter> 
   );
 }
 
