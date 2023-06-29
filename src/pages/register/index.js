@@ -1,4 +1,5 @@
 import React from 'react'     //import react module
+import { Link } from 'react-router-dom';
 
 function Register() {
   const [user, setUser] = React.useState({    //user is a state variable, useState is a hook
@@ -6,6 +7,11 @@ function Register() {
     email: '',
     password: '',
   })
+
+  const register = async () => {
+    console.log(user);
+  }
+
   return (
     <div className='h-screen bg-primary flex items-center justify-center'>
 
@@ -22,15 +28,24 @@ function Register() {
           onChange={(e) => setUser({ ...user, email: e.target.value })}
           placeholder="Enter your email"
         />
-        <input type="text"
+        <input type="password"
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           placeholder="Enter your password"
         />
 
         <button
-          className="contained-btn">
+          className="contained-btn"
+            onClick={register}
+            >
           Register</button>
+
+        <Link
+          to="/login"
+          className="underline"
+        >
+          Already have an account? Login
+        </Link>
       </div>
 
     </div>

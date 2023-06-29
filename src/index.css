@@ -4,6 +4,8 @@
 
 * {
     font-family: ‘Merriweather’, Georgia, serif; 
+    font-size: 16px;
+    font-weight: 500;
 }
 
 input {
@@ -18,15 +20,15 @@ input:focus {
 }
 
 .outlined-btn {
-    border: 1px solid #eb6715;
-    color: #eb6715;
+    border: 1px solid #b74a00;
+    color: #b74a00;
     padding: 10px 20px;
     height: 40px;
     text-transform: uppercase;
 }
 
 .contained-btn {
-    background-color: #eb6715;
+    background-color: #b74a00;
     color: white;
     padding: 5px 20px;
     text-transform: uppercase;
