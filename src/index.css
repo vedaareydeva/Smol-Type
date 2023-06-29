@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: ‘Merriweather’, Georgia, serif; 
+}
+
+input {
+    height: 40px;
+    border: 1px solid #f1b999;
+    padding-left: 20px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #c94305
+}
+
+.outlined-btn {
+    border: 1px solid #eb6715;
+    color: #eb6715;
+    padding: 10px 20px;
+    height: 40px;
+    text-transform: uppercase;
+}
+
+.contained-btn {
+    background-color: #eb6715;
+    color: white;
+    padding: 5px 20px;
+    text-transform: uppercase;
+}
