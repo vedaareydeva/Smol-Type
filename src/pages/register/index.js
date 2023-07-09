@@ -1,5 +1,6 @@
 import React from 'react'     //import react module
 import { Link } from 'react-router-dom';
+import { RegisterUser } from '../../apicalls/users';
 
 function Register() {
   const [user, setUser] = React.useState({    //user is a state variable, useState is a hook
@@ -9,7 +10,16 @@ function Register() {
   })
 
   const register = async () => {
-    console.log(user);
+    try {
+      const response = await RegisterUser(user);
+      if (response.success) {
+        alert(response.message);
+      } else {
+        alert(response.message);
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   }
 
   return (
@@ -36,8 +46,8 @@ function Register() {
 
         <button
           className="contained-btn"
-            onClick={register}
-            >
+          onClick={register}
+        >
           Register</button>
 
         <Link
