@@ -1,6 +1,8 @@
 import React from 'react'     //import react module
 import { Link } from 'react-router-dom';
 import { RegisterUser } from '../../apicalls/users';
+import { toast } from 'react-hot-toast';
+
 
 function Register() {
   const [user, setUser] = React.useState({    //user is a state variable, useState is a hook
@@ -9,18 +11,21 @@ function Register() {
     password: '',
   })
 
-  const register = async () => {
-    try {
-      const response = await RegisterUser(user);
-      if (response.success) {
-        alert(response.message);
-      } else {
-        alert(response.message);
-      }
-    } catch (error) {
-      alert(error.message);
+const register = async () => {
+  let response = null;
+
+  try {
+    response = await RegisterUser(user);
+    if (response.success) {
+      toast.success(response.message);
+    } else {
+      toast.error(response.message);
     }
+  } catch (error) {
+    toast.error(response.message);
   }
+};
+
 
   return (
     <div className='h-screen bg-primary flex items-center justify-center'>

@@ -2,17 +2,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";  //import neces
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import { Toaster } from "react-hot-toast";
+
 
 
 function App() {
   return (
+    <div>
+      <Toaster position="top-center" reverseOrder={false} />
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
-      </BrowserRouter> 
+      </BrowserRouter>
+    </div>
   );
 }
 
